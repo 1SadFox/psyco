@@ -16,6 +16,13 @@ const mockUsers = [
     name: 'Тестовый Пользователь',
     joinDate: new Date().toISOString(),
   },
+  {
+    id: 2,
+    email: 'demo@example.com',
+    password: 'demo123',
+    name: 'Демо Пользователь',
+    joinDate: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
+  },
 ];
 
 export const AuthProvider = ({ children }) => {
