@@ -137,6 +137,13 @@ const Login = () => {
               </div>
             </div>
 
+            {/* Тестовые данные для входа */}
+            <div className="mt-3 bg-blue-50 p-3 rounded-md text-sm text-blue-700 border border-blue-100">
+              <p className="font-medium mb-1">Тестовый вход:</p>
+              <p><span className="font-medium">Email:</span> test@example.com</p>
+              <p><span className="font-medium">Пароль:</span> password123</p>
+            </div>
+
             <Button
               type="submit"
               variant="primary"
