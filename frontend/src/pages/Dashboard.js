@@ -294,7 +294,7 @@ const Dashboard = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
+        transition={{ duration: 0.5, delay: 0.9 }}
       >
         <Card>
           <h2 className="text-lg font-medium mb-4">Быстрые действия</h2>
