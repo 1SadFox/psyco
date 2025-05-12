@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
+import { MoodProvider } from './context/MoodContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
 // Pages
@@ -20,62 +21,64 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<Welcome />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          
-          {/* Protected Routes */}
-          <Route 
-            path="/dashboard" 
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/tests" 
-            element={
-              <ProtectedRoute>
-                <TestsPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/tests/:id" 
-            element={
-              <ProtectedRoute>
-                <TestDetail />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/calendar" 
-            element={
-              <ProtectedRoute>
-                <Calendar />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/chat" 
-            element={
-              <ProtectedRoute>
-                <Chat />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/profile" 
-            element={
-              <ProtectedRoute>
-                <Profile />
-              </ProtectedRoute>
-            } 
-          />
-        </Routes>
+        <MoodProvider>
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/" element={<Welcome />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            
+            {/* Protected Routes */}
+            <Route 
+              path="/dashboard" 
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/tests" 
+              element={
+                <ProtectedRoute>
+                  <TestsPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/tests/:id" 
+              element={
+                <ProtectedRoute>
+                  <TestDetail />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/calendar" 
+              element={
+                <ProtectedRoute>
+                  <Calendar />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/chat" 
+              element={
+                <ProtectedRoute>
+                  <Chat />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/profile" 
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              } 
+            />
+          </Routes>
+        </MoodProvider>
       </AuthProvider>
     </Router>
   );
