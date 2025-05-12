@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useMood } from '../context/MoodContext';
 import MainLayout from '../components/Layout/MainLayout';
 import Card from '../components/UI/Card';
 import Button from '../components/UI/Button';
+import MoodCalendar from '../components/MoodTracker/MoodCalendar';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaComments, FaClipboardList, FaChartLine } from 'react-icons/fa';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
